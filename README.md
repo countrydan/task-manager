@@ -10,7 +10,17 @@ Create, update or delete tasks. Filter or sort and get smart suggestions based o
 
 ## Setup Instructions
 
-To set up the API build an image from the provided docker file, start a container and the endpoints should be available at localhost.
+To set up the API clone the repo and create a .env file according to the example.
+
+Build an image from the provided docker file:
+   ```bash
+   docker build -t taskmanager .
+   ```
+Start a container:
+   ```bash
+   docker run -d --name taskmanagercont -p 80:80 taskmanager
+   ```
+and the endpoints should be available at localhost.
 
 Alternatively, install the required Python version (3.11), the dependencies and run the uvicorn command.
    ```bash
