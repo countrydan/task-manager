@@ -97,6 +97,7 @@ async def update_task(task: Task):
     old_task = await check_task_exists(task.id)
     if old_task["creation_date"] != task.creation_date:
         raise HTTPException(status_code=409, detail="Cannot update creation date")
+    # completed_ts was going to be used for the second criteria in the unique challenge
     completed_ts = None
     if old_task["status"] != task.status and task.status.value == Status.completed:
         completed_ts = datetime.utcnow()
