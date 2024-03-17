@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+sqlalchemy
+databases[aiosqlite]
+python-dotenv
+pydantic-settings
+sklearn
+numpy
