@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class BaseConfig(BaseSettings):
-    ENV_STATE: str | None = None
+    ENV_STATE: str | None
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 
@@ -12,13 +12,13 @@ class GlobalConfig(BaseConfig):
 
 
 class DevConfig(GlobalConfig):
-    model_config = SettingsConfigDict(env_prefix="DEV_")
+    model_config = SettingsConfigDict()
 
 
 class TestConfig(GlobalConfig):
     DATABASE_URL: str = "sqlite:///test.db"
     DB_FORCE_ROLL_BACK: bool = True
-    model_config = SettingsConfigDict(env_prefix="TEST_")
+    model_config = SettingsConfigDict()
 
 
 def get_config(env_state: str) -> GlobalConfig:
