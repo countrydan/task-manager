@@ -52,7 +52,7 @@ def get_similar_tasks(existing_tasks: list[dict], new_task: dict) -> list[dict]:
     return similar_tasks
 
 
-# BELOW is unfinished code. I left this here to showcase the different approaches to the unique challenge
+# BELOW is unfinished code. I left this here to showcase the different approaches to the unique challange
 
 
 # from nltk.tokenize import word_tokenize
